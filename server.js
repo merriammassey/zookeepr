@@ -1,4 +1,4 @@
-const { animals } = require('/data/animals');
+const { animals } = require('./data/animals.json');
 
 const express = require('express');
 
@@ -44,6 +44,11 @@ function filterByQuery(query, animalsArray) {
   }
   // return the filtered results:
   return filteredResults;
+}
+
+function findById(id, animalsArray) {
+  const result = animalsArray.filter(animal => animal.id === id)[0];
+  return result;
 }
 
 //access query property on req object
