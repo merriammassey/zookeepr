@@ -1,4 +1,4 @@
-const { animals } = require('./data/animals.json');
+const { animals } = *require*('./data/animals.json');
 
 const express = require('express');
 
