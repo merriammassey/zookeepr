@@ -47,12 +47,17 @@ function filterByQuery(query, animalsArray) {
 }
 
 //access query property on req object
-app.get('./api/animals', (req, res) => {
+app.get('/api/animals', (req, res) => {
   let results = animals;
   if (req.query) {
     results = filterByQuery(req.query, results);
   }
   res.json(results);
+});
+
+app.get('/api/animals/:id', (req, res) => {
+  const result = findById(req.params.id, animals);
+    res.json(result);
 });
 
 app.listen(PORT, () => {
