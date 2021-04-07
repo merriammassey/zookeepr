@@ -1,4 +1,4 @@
-const { animals } = require('./data/animals');
+const { animals } = require('/data/animals');
 
 const express = require('express');
 
